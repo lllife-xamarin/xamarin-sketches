@@ -1,0 +1,34 @@
+﻿```xml
+<Manifest>
+  <AgentType>Mac_Cocoa</AgentType>
+  <Resources />
+  <TimeoutSeconds>0</TimeoutSeconds>
+</Manifest>
+```
+```fsharp
+type Data = 
+    | A of string 
+    | B of int
+
+let show = function 
+    | A str -> sprintf "%s" str 
+    | B int -> sprintf "%d" int
+
+B 123 |> show
+B 999 |> show
+A "1" |> show
+
+let x = 100
+let y = 200
+let z = 900
+
+
+let k = x + y + z
+
+
+
+
+
+
+```
+
