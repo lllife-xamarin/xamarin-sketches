@@ -6,27 +6,20 @@
 </Manifest>
 ```
 ```fsharp
-type Data = 
-    | A of string 
-    | B of int
 
-let show = function 
-    | A str -> sprintf "%s" str 
-    | B int -> sprintf "%d" int
+// project euler 1
+let range = [0..999]
+let condition x = x % 3 = 0 || x % 5 = 0
 
-B 123 |> show
-B 999 |> show
-A "1" |> show
+let x = range |> List.filter condition |> List.fold (+) 0
+let y = [0..999] |> Seq.filter (fun x -> x % 3 = 0 || x % 5 = 0) |> Seq.reduce (+)
+let z = seq { for x in 0 .. 999 do if x % 3 = 0 || x % 5 = 0 then yield x } |> Seq.sum
 
-let x = 100
-let y = 200
-let z = 900
+let inline palindrome l = List.rev l = l
 
-
-let k = x + y + z
-
-
-
+let a = [1; 2; 3; 4; 5] |> palindrome = false
+let b = ["r"; "a"; "c"; "e"; "c"; "a"; "r"] |> palindrome  = true
+let c = git [1; 1; 3; 3; 1; 1] |> palindrome = true
 
 
 
